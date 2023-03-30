@@ -1,0 +1,123 @@
+
+
+#form {
+ display: flex; 
+ flex-direction: column; 
+ align-items: center; 
+}
+
+input {
+ width: 50%; 
+ height: 20px; 
+ text-align: center; 
+}
+
+label {
+  margin-top: 10px; 
+}
+
+.courseInfo {
+ height: fit-content; 
+ /* background-color: blue;  */
+ width: 90%; 
+ border-style: solid; 
+ border-width: 1px;
+ border-color: grey;
+ display: flex; 
+ flex-direction: column;
+ justify-content: flex-start; 
+
+}
+
+label {
+ font-weight: bold; 
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+.courseInfo .lecture {
+ background-color: lightblue;
+ width: 100%;
+
+}
+
+.discussion {
+ background-color: lightyellow;
+ width: 100%;
+
+}
+
+.sections {
+  width: 100%;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+}
+
+.section-info{
+ display: flex;
+ justify-content: space-around; 
+}
+
+.section-code {
+ width: 20%; 
+
+}
+
+.section-meeting {
+ width: 20%; 
+}
+
+.section-location {
+ width: 20%; 
+}
+
+.section-capacity {
+ width: 20%; 
+}
+
+.lecture-instructors {
+ display: flex; 
+ margin-left: 10px
+}
+
+#open-input {
+ display: flex; 
+ flex-direction: row; 
+ white-space: nowrap;
+}
+
+ul {
+  list-style: none;
+}
+
+.results {
+  display: flex; 
+  flex-direction: column;
+  align-items: stretch; 
+  width: 100%; 
+}
+
+.courseTitle {
+  font-weight: bold; 
+  margin-left: 10px; 
+}
+
+#checkbox {
+  margin-top: 12px; 
+  margin-right: 5px; 
+}
+
+button {
+  background-color: #1295D8;
+  color: white; 
+  border-width: 0px; 
+  border-radius: 15px;
+  width: 100px; 
+  height: 35px; 
+  font-size: 20px; 
+  margin-top: 10px; 
+}
