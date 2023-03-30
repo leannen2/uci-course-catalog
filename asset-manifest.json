@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/uci-course-catalog/static/css/main.d3c2f570.css",
+    "main.js": "/uci-course-catalog/static/js/main.68a82806.js",
+    "static/js/787.55f40a4f.chunk.js": "/uci-course-catalog/static/js/787.55f40a4f.chunk.js",
+    "index.html": "/uci-course-catalog/index.html",
+    "main.d3c2f570.css.map": "/uci-course-catalog/static/css/main.d3c2f570.css.map",
+    "main.68a82806.js.map": "/uci-course-catalog/static/js/main.68a82806.js.map",
+    "787.55f40a4f.chunk.js.map": "/uci-course-catalog/static/js/787.55f40a4f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d3c2f570.css",
+    "static/js/main.68a82806.js"
+  ]
+}
