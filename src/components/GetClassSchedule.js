@@ -3,52 +3,43 @@ import axios from 'axios'
 import Course from "./Course"
 import Depts from "./Depts"
 
-
 function GetClassSchedule() {
- const [posts,setPosts] = useState([])
- const [dept, setDept] = useState("COMPSCI")
- const [deptFromButtonClick, setDeptFromButtonClick] = useState(1)
- const [courseNum, setCourseNum] = useState("")
- const [courseNumFromButtonClick, setCourseNumFromButtonClick] = useState(1)
- const [term, setTerm] = useState("")
- const [termFromButtonClick, setTermFromButtonClick] = useState(1)
- const [checked,setChecked] = useState(false)
- const [errorFound, setError] = useState(false)
-//  const [link, setLink] = useState(`https://api.peterportal.org/rest/v0/schedule/soc`)
-//  const [linkFromButtonClick, setCourseNumFromButtonClick] = useState(1)
+  const [posts,setPosts] = useState([])
+  const [dept, setDept] = useState("COMPSCI")
+  const [deptFromButtonClick, setDeptFromButtonClick] = useState(1)
+  const [courseNum, setCourseNum] = useState("")
+  const [courseNumFromButtonClick, setCourseNumFromButtonClick] = useState(1)
+  const [term, setTerm] = useState("")
+  const [termFromButtonClick, setTermFromButtonClick] = useState(1)
+  const [checked,setChecked] = useState(false)
+  const [errorFound, setError] = useState(false)
 
- useEffect (() => {
+  useEffect (() => {
   axios 
-   .get(`https://api.peterportal.org/rest/v0/schedule/soc?term=${term}&department=${dept}&courseNumber=${courseNum}`)
-   .then(res => {
+    .get(`https://api.peterportal.org/rest/v0/schedule/soc?term=${term}&department=${dept}&courseNumber=${courseNum}`)
+    .then(res => {
     console.log(res.data.schools[0].departments[0].courses)
     setPosts(res.data.schools[0].departments[0].courses)
     setError(false)
-   })
-   .catch(err => {
+    })
+    .catch(err => {
     setError(true)
     console.log(err)
-   })
- },[deptFromButtonClick,courseNumFromButtonClick, termFromButtonClick])
- 
- // function convertClassName(id) {
- //  let text = id; 
- //  let result = text.replace("&", "%26");
- //  return result.replace("/", "%2F") ;
- // }
+    })
+  },[deptFromButtonClick,courseNumFromButtonClick, termFromButtonClick])
 
- function urlconfig (input) {
-  let text = input; 
-  let result = text.replace(" ", "%20");
-  console.log(result)
-  return result
- }
+  function urlconfig (input) {
+    let text = input; 
+    let result = text.replace(" ", "%20");
+    console.log(result)
+    return result
+  }
 
- const handleClick = () => {
-		setDeptFromButtonClick(dept)
-    setCourseNumFromButtonClick(courseNum)
-    setTermFromButtonClick(urlconfig(term))
- }
+  const handleClick = () => {
+      setDeptFromButtonClick(dept)
+      setCourseNumFromButtonClick(courseNum)
+      setTermFromButtonClick(urlconfig(term))
+  }
 
 const handleChange = () => {
   setChecked(!checked); 
@@ -64,12 +55,12 @@ function getCourses () {
         <li>
           <Course post={post} checked ={checked}/>
         </li>
-       ))
+      ))
     )
   }
 }
 
- return (
+return (
   <div>
     <div id="form">
       <label for="term_input" > Term (e.g. 2018 Fall): </label>
@@ -234,16 +225,13 @@ function getCourses () {
       </div>
       <button type="button" onClick={handleClick}> Search </button>
     </div>
-   <div className="results">
-    {/* <p> Checked? {checked.toString()}</p> */}
+  <div className="results">
     <ul>
       {getCourses()}
-      
-     
     </ul>
-   </div>
   </div>
- )
+  </div>
+)
 }
 
 export default GetClassSchedule
